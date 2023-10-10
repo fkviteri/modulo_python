@@ -1,0 +1,13 @@
+library(reticulate)
+use_python("C:\\Users\\fkva_\\AppData\\Local\\Programs\\Python\\Python311\\python.exe", required = TRUE)
+py_run_string("import pkg_resources")
+py_run_string("installed_packages = [(d.project_name, d.version) for d in pkg_resources.working_set]")
+installed_packages <- py$installed_packages
+installed_packages
+install_python(version = "3.9")  # Reemplaza 3.9 con la versión que desees
+
+
+# Crear un nuevo ambiente
+conda_create("nombre_del_ambiente")
+
+use_condaenv("modulo_python", required = TRUE)
